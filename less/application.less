@@ -1,0 +1,191 @@
+body{
+	margin-top: 61px;
+}
+
+.request-type{
+	h3{
+		margin: 15px 0 10px 0px; 
+		padding: 0 0;
+		color: @brand-orange;
+		font-family:  @font-family-sans-serif;
+		> b {
+			padding: 0 5px;
+		}
+	}
+	.btn-default{
+		background: none;
+		font-size: inherit;
+		color: @brand-orange;
+		font-weight: bold;
+		border:none;
+		padding: 0 5px;
+		line-height: inherit;
+		vertical-align: inherit;
+		
+		&:hover,
+		&:focus{
+			background-color: #ccc;
+			color: @brand-orange;
+		};
+
+		&:active,
+		&.active{
+			color: @brand-orange;
+			outline: 0;
+		    background-image: none;
+		    background-color: #ccc;
+		    .box-shadow(inset 0 0px 0px rgba(0,0,0,.125));	
+		};
+	}
+
+	.btn-group.open {
+		.dropdown-toggle{
+			 .box-shadow(none);
+			 background-color: #ccc;
+		}
+	}
+}
+
+.form-group{
+	.note{
+		color: @brand-maroon; 
+		padding-left: 76px; 
+		font-size: @font-size-small;
+	}
+	.glyphicon{
+		//color: @brand-blue;
+		&:hover{
+			color: @brand-blue;
+			cursor: pointer;
+
+		};
+		//font-size: 0.9em;
+	}
+}
+
+.alert{
+	//margin-left: -@alert-padding;
+	margin-top: @alert-padding; 
+	.btn-git,
+	.btn
+	.btn-altn{
+		margin-top: 20px;
+	}
+}
+
+.container > .vertical-gap{
+	height: 20px;
+}
+.container{
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+/*
+.table{
+	margin-right: -15px;
+	margin-left: -15px;
+	width: @container-md;
+}
+.pagination{
+	margin-right: -15px;
+}
+
+.form-module, .alert {
+  width: @container-md;
+}
+.adjusted{
+	margin-right: -15px;
+}
+*/
+.modal-sm{
+	width: 400px;
+}
+
+
+.form-group{
+	.control-left{
+		padding-right: 0px;
+	}
+	.control-inner{
+		padding:  0px;
+	}
+	.static-inner{
+		padding: 0px;
+		//width: 28px;
+		text-align: center;
+	}
+	.control-right{
+		padding-left: 0px
+	}
+
+}
+
+.delete-confirm{
+	padding: 0 15px;
+	span{
+		font-weight: bold;
+		margin-right: 10px;
+	}
+}
+.delete-highlight{
+	background: lighten(@brand-red, 55.5%);
+}
+
+.navbar-brand{
+	padding: 5px;
+	.line{
+		display: inline;
+		font-family: @font-family-serif;
+		font-size: 28px;
+		color: @brand-black;
+		position: relative;
+		top: 17px;
+		margin-left: 10px;
+	}
+	.line-one{
+		display: inline;
+		font-family: @font-family-serif;
+		font-size: 28px;
+		color: @brand-black;
+		position: relative;
+		top: -5px;
+		margin-left: 10px;
+		padding: 0px;
+		line-height: 0px;
+	}
+	.line-two{
+		position: relative;
+		font-family: @font-family-serif;
+		color: @brand-black;
+		font-size: 18px;
+		margin: 0px;
+		margin-left: 63px;
+		top: -6px;
+		padding: 0px;
+		line-height: 0px;
+
+	}
+}
+
+.edge-gap {
+	padding: 0 20px;
+}
+.footer {
+	border-bottom: 3px solid @brand-orange;
+
+	img{
+		padding: 5px 0;
+	}
+	p{
+		position: relative;
+		top: 47px;
+	}
+}
+
+.nav-pills{
+	margin: 10px 0 0 10px;
+}
+.top-gap{
+	margin-top: 20px;
+}

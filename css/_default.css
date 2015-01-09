@@ -1,0 +1,61 @@
+.w-bar{
+	margin-top: 40px;
+	font: 14px Arial;
+}
+.w-bar .node{
+	width:25%;
+	float: left;
+}
+.w-bar .node:hover{
+	background-color: #f9f9f9;
+	cursor: pointer;
+}
+.w-bar .node .label,
+.w-bar .node .text{
+	line-height: 30px;
+	text-align: center;
+	color: #999;
+}
+.w-bar .node .label{
+	font-weight: bold;
+}
+.w-bar .node .text{
+	font-size: 16px;
+}
+.w-bar .node .splitter{}
+.w-bar .node .splitter .dot{
+	background-color: #999;
+	width: 6px;
+	height: 6px;
+}
+.w-bar .node .splitter .line-outer{
+	background-color: #999;
+	height: 2px;
+	position: relative;
+	top: -4px;
+	width: 100%;
+}
+.w-bar .node .splitter .line-inner{
+	width: 50px;
+	height: 2px;
+}
+
+.w-bar .node-dirty:hover{
+	background-color: inherit;
+	cursor: inherit;
+}
+
+.w-bar .node-dirty .label,
+.w-bar .node-dirty .text{
+	color: red;
+}
+.w-bar .node-dirty .splitter .dot,
+.w-bar .node-dirty .splitter .line-outer{
+	background-color: red;
+}
+.w-bar .node .splitter .dot-right,
+.w-bar .node-dirty .splitter .dot-right{
+	float: right;
+	position: relative;
+	top: -8px;
+}

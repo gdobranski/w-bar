@@ -1,0 +1,335 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+// Core styles
+.btn {
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  font-weight: @btn-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+  .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; @border-radius-base);
+  .user-select(none);
+
+  &:focus {
+    .tab-focus();
+  }
+
+  &:hover,
+  &:focus {
+    color: @btn-default-color;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+    .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    pointer-events: none; // Future-proof disabling of clicks
+    .opacity(.65);
+    .box-shadow(none);
+  }
+
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+  .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+}
+.btn-primary {
+  .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+}
+// Warning appears as orange
+.btn-warning {
+  .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
+}
+// Danger and error appear as red
+.btn-danger {
+  .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
+}
+// Success appears as green
+.btn-success {
+  .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
+}
+// Info appears as blue-green
+.btn-info {
+  .button-variant(@btn-info-color; @btn-info-bg; @btn-info-border);
+}
+
+
+// Link buttons
+// -------------------------
+
+// Make a button look and behave like a link
+.btn-link {
+  color: @link-color;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    .box-shadow(none);
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: @btn-link-disabled-color;
+      text-decoration: none;
+    }
+  }
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+}
+.btn-sm,
+.btn-xs {
+  // line-height: ensure proper height of button next to small input
+  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+}
+.btn-xs {
+  padding: 1px 5px;
+}
+
+
+// Block button
+// --------------------------------------------------
+
+.btn-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+
+
+
+// Button alternative 
+.btn-altn{
+  
+  display: inline-block;
+  //float: left;
+  text-decoration: none;
+  padding: 6px 12px;
+  margin-right: 6px;
+  border-radius: 3px;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: normal;
+
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  border: 1px solid #43505e;
+  background: #556270;
+  background: -moz-linear-gradient(top, #556270 0%, #444d57 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#556270), color-stop(100%,#444d57));
+  background: -webkit-linear-gradient(top, #556270 0%,#444d57 100%);
+  background: -o-linear-gradient(top, #556270 0%,#444d57 100%);
+  background: -ms-linear-gradient(top, #556270 0%,#444d57 100%);
+  background: linear-gradient(to bottom, #556270 0%,#444d57 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#556270', endColorstr='#444d57',GradientType=0 );
+  -moz-box-shadow: inset 0 3px 0px -2px rgba(255, 255, 255, .3);
+  -webkit-box-shadow: inset 0 3px 0px -2px rgba(255, 255, 255, .3);
+  box-shadow: inset 0 3px 0px -2px rgba(255, 255, 255, .3);
+  
+  &:hover{
+      background: #556270;
+      background: -moz-linear-gradient(top, #556270 0%, #5b6774 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#556270), color-stop(100%,#5b6774));
+      background: -webkit-linear-gradient(top, #556270 0%,#5b6774 100%);
+      background: -o-linear-gradient(top, #556270 0%,#5b6774 100%);
+      background: -ms-linear-gradient(top, #556270 0%,#5b6774 100%);
+      background: linear-gradient(to bottom, #556270 0%,#5b6774 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#556270', endColorstr='#5b6774',GradientType=0 );
+  }
+
+  &:active{
+      background: #414952;
+      background: -moz-linear-gradient(top, #414952 0%, #555e68 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#414952), color-stop(100%,#555e68));
+      background: -webkit-linear-gradient(top, #414952 0%,#555e68 100%);
+      background: -o-linear-gradient(top, #414952 0%,#555e68 100%);
+      background: -ms-linear-gradient(top, #414952 0%,#555e68 100%);
+      background: linear-gradient(to bottom, #414952 0%,#555e68 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#414952', endColorstr='#555e68',GradientType=0 );
+  }
+  .current {
+      display: block;
+      //float: left;
+      text-decoration: none;
+      padding: 6px 11px;
+      margin-right: 6px;
+      border-radius: 3px;
+      color: #fff;
+      text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+      border: 1px solid #616c78;
+      background: #838d98;
+      -moz-box-shadow: inset 0 3px 0px -2px rgba(255, 255, 255, .3);
+      -webkit-box-shadow: inset 0 3px 0px -2px rgba(255, 255, 255, .3);
+      box-shadow: inset 0 3px 0px -2px rgba(255, 255, 255, .3);
+  }
+}
+
+
+// Button git
+.btn-git {
+  position: relative;
+  display: inline-block;
+  padding: 7px 12px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+  white-space: nowrap;
+  background-color: #eeeeee;
+  background-image: -moz-linear-gradient(#fcfcfc, #eee);
+  background-image: -webkit-linear-gradient(#fcfcfc, #eee);
+  background-image: linear-gradient(#fcfcfc, #eee);
+  background-repeat: repeat-x;
+  border-radius: 3px;
+  border: 1px solid #d5d5d5;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+
+  &:hover,
+  &:active{
+    text-decoration: none;
+    background-color: #dddddd;
+    background-image: -moz-linear-gradient(#eee, #ddd);
+    background-image: -webkit-linear-gradient(#eee, #ddd);
+    background-image: linear-gradient(#eee, #ddd);
+    background-repeat: repeat-x;
+    border-color: #ccc;
+  }
+}
+
+.btn-git.primary{
+  color: @brand-white;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  background-color: @brand-blue;
+  background-image: -moz-linear-gradient(lighten(@brand-blue, 20), @brand-blue);
+  background-image: -webkit-linear-gradient(lighten(@brand-blue, 20), @brand-blue);
+  background-image: linear-gradient(lighten(@brand-blue, 20), @brand-blue);
+  background-repeat: repeat-x;
+  border-color: darken(@brand-blue, 5);
+  &:hover,
+  &:active{
+    color: @brand-white;
+    background-color: darken(@brand-blue, 5);
+    background-image: -moz-linear-gradient(lighten(@brand-blue, 15), darken(@brand-blue, 5));
+    background-image: -webkit-linear-gradient(lighten(@brand-blue, 15), darken(@brand-blue, 5));
+    background-image: linear-gradient(lighten(@brand-blue, 15), darken(@brand-blue, 5));
+    background-repeat: repeat-x;
+    border-color: darken(@brand-blue, 10);
+  };
+}
+
+.btn-git.special{
+  
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  background-color: #60b044;
+  background-image: -moz-linear-gradient(#8add6d, #60b044);
+  background-image: -webkit-linear-gradient(#8add6d, #60b044);
+  background-image: linear-gradient(#8add6d, #60b044);
+  background-repeat: repeat-x;
+  border-color: #5ca941;
+  
+  &:hover,
+  &:active{
+    color: #fff;
+    background-color: #569e3d;
+    background-image: -moz-linear-gradient(#79d858, #569e3d);
+    background-image: -webkit-linear-gradient(#79d858, #569e3d);
+    background-image: linear-gradient(#79d858, #569e3d);
+    background-repeat: repeat-x;
+    border-color: #4a993e;
+  }
+}
+
+
+.btn-git.warning{
+  color: @brand-white;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  background-color: @brand-red;
+  background-image: -moz-linear-gradient(lighten(@brand-red, 15), @brand-red);
+  background-image: -webkit-linear-gradient(lighten(@brand-red, 15), @brand-red);
+  background-image: linear-gradient(lighten(@brand-red, 15), @brand-red);
+  background-repeat: repeat-x;
+  border-color: darken(@brand-red, 5);
+  
+  &:hover,
+  &:active{
+    color: @brand-white;
+    background-color: darken(@brand-red, 5);
+    background-image: -moz-linear-gradient(lighten(@brand-red, 15), darken(@brand-red, 5));
+    background-image: -webkit-linear-gradient(lighten(@brand-red, 15), darken(@brand-red, 5));
+    background-image: linear-gradient(lighten(@brand-red, 15), darken(@brand-red, 5));
+    background-repeat: repeat-x;
+    border-color: darken(@brand-red, 10);
+  }
+}
+

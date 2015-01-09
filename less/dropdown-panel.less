@@ -1,0 +1,68 @@
+// Dropdown Panel
+// --------------------------------------------------
+
+
+// Wrapper and base class
+//
+
+.dropdown-panel{
+	position: fixed;
+	top: 61px;
+	z-index: @zindex-navbar;
+	padding: 20px 0 0 0;
+	background-color: lighten(@brand-blue, 30%); 
+	width: 100%; 
+	//border-bottom: 1px solid @brand-blue;
+  // Adjust close link position
+  .close {
+    position: relative;
+    top: -15px;
+    right: 10px;
+    color: inherit;
+  }
+
+  .form-group{
+    > .control-label{
+      //color: @brand-white;
+    }
+  }
+}
+
+// Form control adjustements 
+//
+
+.form-control{
+  &:hover{
+  	border-color: darken(@input-border, 20%);
+  }
+  .caret{
+    border-top-color: @input-border;
+    &:hover{
+      border-top-color: darken(@input-border, 20%);
+      cursor: pointer;
+    }
+   > input[type="text"]{
+   		&:focus{
+   			outline: none;
+   			//border: 1px solid trans;
+   		};
+   	}
+  }
+}
+
+// Highlighter around navbar form 
+//
+
+.drop-down-highlighter{
+  //padding: 0 30px;
+
+}
+
+.drop-down-highlighter-active{
+  background-color: lighten(@brand-blue, 30%); 
+  position: relative;
+  bottom: -2px;
+  padding: 0 30px;
+  .transition(~"all ease-in-out .3s");
+}
+

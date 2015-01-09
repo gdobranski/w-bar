@@ -1,0 +1,99 @@
+.w-bar{
+	margin-top: 40px;
+	.node{
+		width:25%;
+		float: left;
+		&:hover{
+			background-color: #f9f9f9;
+			cursor: pointer;		
+		};
+		.label, 
+		.text{
+			line-height: 30px;
+			text-align: center;
+			color: #999;		
+		}
+		.label{
+			font-weight: bold;		
+		}
+		.text{
+			font-size: 16px;
+		}
+		.splitter{
+			.dot{
+				background-color: #999;
+				width: 6px;
+				height: 6px;
+			}
+			.line-outer{
+				background-color: #999;
+				height: 2px;
+				position: relative;
+				top: -4px;
+				width: 100%;
+			}
+			.line-inner{
+				width: 50px;
+				height: 2px;
+			}
+		}	
+	}
+	.node,
+	.node-dirty{
+		.splitter{
+			.dot-right{
+				float: right;
+				position: relative;
+				top: -8px;
+			}
+		}
+	}
+	.node-dirty{
+		&:hover{
+			background-color: inherit;
+			cursor: inherit;
+		};
+		.label,
+		.text{
+			color: red;
+		}
+		.splitter{
+			.dot,
+			.line-outer{
+				background-color: red;
+			}
+		}
+	}
+}
+
+.w-cursor{
+	  position: relative;
+	  z-index: @zindex-tooltip;
+	  display: block;
+	  visibility: visible;
+	  font-size: 16px;
+	  line-height: 1.4;
+	  max-width: 160px;
+	.w-cursor-arrow{
+	  position: relative;
+	  width: 0;
+	  height: 0;
+	  border-color: transparent;
+	  border-style: solid;
+	  bottom: 0;
+	  left: 50%;
+	  margin-left: -@tooltip-arrow-width;
+	  border-width: @tooltip-arrow-width @tooltip-arrow-width 0;
+	  border-top-color: #777;
+	}
+	.w-cursor-inner{
+	  max-width: @tooltip-max-width;
+	  padding: 3px 8px;
+	  color: #fff;
+	  text-align: center;
+	  text-decoration: none;
+	  background-color: #777;
+	  border-radius: @border-radius-tiny;
+	}
+}
+
